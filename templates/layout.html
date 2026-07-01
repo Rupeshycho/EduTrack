@@ -22,7 +22,34 @@
                 {% if user.is_staff %}
                     <a href="/admin/">Admin Panel</a>
                 {% endif %}
-                <a href="{% url 'users:logout' %}">Logout ({{ user.username }})</a>
+                {% comment %} <a href="{% url 'users:logout' %}">Logout ({{ user.username }})</a> {% endcomment %}
+                <form method="POST" action="{% url 'users:logout' %}" class="logout-form">
+                    {% csrf_token %}
+                    <button type="submit" class="logout-btn" 
+                     style="
+                     .logout-form {
+                        display: inline;
+                    }
+
+                    .logout-btn {
+                        background: none;
+                        border: none;
+                        color: white;
+                        padding: 8px 16px;
+                        border-radius: 20px;
+                        font-weight: 600;
+                        font-size: 1rem;
+                        font-family: inherit;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    }
+
+                    .logout-btn:hover {
+                        background: rgba(255, 255, 255, 0.2);
+                    }
+                    ">Logout ({{ user.username }})</button>
+
+                </form>
             {% else %}
                 <a href="{% url 'users:login' %}">Login</a>
                 <a href="{% url 'users:register' %}">Register</a>
