@@ -109,7 +109,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'edutrack_db',
         'USER': 'postgres',
-        'PASSWORD': 'your_password',
+        'PASSWORD': 'rupesh1234',
         'HOST': 'localhost',
         'PORT': '5432',
     }
