@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}Mark Attendance{% endblock %}
+
+{% block content %}
+<h2 class="page-title">Mark Attendance</h2>
+
+<div class="form-card">
+    <form method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-block">Save Attendance</button>
+    </form>
+</div>
+
+<h3 class="page-title">Recent Records</h3>
+<table class="data-table">
+    <thead>
+        <tr><th>Student</th><th>Date</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+        {% for record in recent %}
+            <tr>
+                <td>{{ record.student }}</td>
+                <td>{{ record.date }}</td>
+                <td><span class="badge badge-{{ record.status|lower }}">{{ record.get_status_display }}</span></td>
+            </tr>
+        {% empty %}
+            <tr><td colspan="3">No attendance records yet.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

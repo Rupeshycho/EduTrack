@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="form-card">
+    <h2>Create Your Account</h2>
+    <p class="subtitle">Join EduTrack as a student or teacher.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <div class="error-message">{{ field.errors }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-block">Create Account</button>
+    </form>
+
+    <p class="switch-link">Already have an account? <a href="{% url 'users:login' %}">Login here</a></p>
+</div>
+{% endblock %}
