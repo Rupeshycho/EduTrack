@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # EduTrack — Django School Management System
 
 A simple, practical school management system built with Django, Python, and SQL.
@@ -72,3 +73,8 @@ See `sql/README.md` for hand-written schema/query files matching both engines.
 New users choose Student or Teacher at registration (`/users/register/`).
 Admin accounts are created via `createsuperuser` and assigned the Admin role
 in the admin panel.
+=======
+# EduTrack
+A  Django Based (School Mgmt System) 
+I built  EduTrack, a Django-based school management system — it directly extends the students/teachers/attendance/exams apps, and it demonstrates Django, MySQL/SQL, Git, and HTML/CSS all together with a realistic local problem (paper-based record keeping at small schools). 
+>>>>>>> ca5cb0705bb99228b9cf9dc30fbea0601b288c13
