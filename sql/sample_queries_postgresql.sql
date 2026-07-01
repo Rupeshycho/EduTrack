@@ -1,7 +1,5 @@
--- ============================================================
--- EduTrack — Sample SQL Queries (PostgreSQL version)
+
 -- Run against schema_postgresql.sql in pgAdmin's Query Tool.
--- ============================================================
 
 -- 1. List every student with their name, class, and roll number
 SELECT
