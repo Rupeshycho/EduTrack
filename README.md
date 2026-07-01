@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # EduTrack — Django School Management System
 
 A simple, practical school management system built with Django, Python, and SQL.
@@ -53,14 +53,13 @@ for the Django admin panel.
 ## Switching to MySQL or PostgreSQL
 
 By default the project uses SQLite so it runs with zero setup. `edutrack/settings.py`
-has ready-to-uncomment `DATABASES` blocks for both:
+has ready-to-uncomment `DATABASES` :
 
-- **MySQL** — install `mysqlclient`, create the DB, uncomment the MySQL block.
 - **PostgreSQL** — install `psycopg2-binary`, create the DB in pgAdmin
   (or `CREATE DATABASE edutrack_db;` in its Query Tool), uncomment the
   PostgreSQL block.
 
-Either way, after switching just run `python manage.py migrate` again —
+After switching just run `python manage.py migrate` again —
 Django's ORM will create all the tables in the new database automatically.
 See `sql/README.md` for hand-written schema/query files matching both engines.
 
@@ -69,12 +68,8 @@ See `sql/README.md` for hand-written schema/query files matching both engines.
 - **Admin** — manage everything through `/admin/` (students, teachers, classes, exams).
 - **Teacher** — logs in and marks attendance at `/attendance/mark/`.
 - **Student** — logs in and views results/attendance at `/exams/my-results/`.
-
-New users choose Student or Teacher at registration (`/users/register/`).
+**
+_New users choose Student or Teacher at registration (`/users/register/`).
 Admin accounts are created via `createsuperuser` and assigned the Admin role
-in the admin panel.
-=======
-# EduTrack
-A  Django Based (School Mgmt System) 
-I built  EduTrack, a Django-based school management system — it directly extends the students/teachers/attendance/exams apps, and it demonstrates Django, MySQL/SQL, Git, and HTML/CSS all together with a realistic local problem (paper-based record keeping at small schools). 
->>>>>>> ca5cb0705bb99228b9cf9dc30fbea0601b288c13
+in the admin panel._**
+
